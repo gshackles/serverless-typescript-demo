@@ -1,0 +1,17 @@
+service: serverless-typescript-demo
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+plugins:
+  - serverless-webpack
+
+functions:
+  hello:
+    handler: handler.hello
+
+    events:
+     - http:
+         path: hello
+         method: get
